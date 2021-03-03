@@ -1,15 +1,15 @@
 .root {
   &.sing-dashboard {
-    --logo-color: #5CB0FF;
+    --logo-color: #cf5cff;
     --body-bg: #f9fbfd;
-    --light-color: #F6F6E9;
+    --light-color: #f6f6e9;
 
-    --sidebar-bg-color: #002B49;
-    --sidebar-color: #C2C2C2;
-    --sidebar-color-item: #FFFFFF;
-    --sidebar-action-bg: #042338;
+    --sidebar-bg-color: #3a0049;
+    --sidebar-color: #c2c2c2;
+    --sidebar-color-item: #ffffff;
+    --sidebar-action-bg: #2e0438;
     --sidebar-item-active: var(--light-color);
-    --sidebar-item-active-bg: #5CB0FF;
+    --sidebar-item-active-bg: #cf5cff;
     --sidebar-badge-bg: #005792;
 
     --sidebar-nav-title-color: var(--light-color);
@@ -17,8 +17,8 @@
     --widget-shadow-color: 75, 102, 171;
 
     --navbar-bg: #fff;
-    --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
-
+    --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1),
+      0 0 15px rgba(var(--widget-shadow-color), 0.06);
 
     // dependable variables
     --sidebar-progress-bg-color: var(--sidebar-action-bg);

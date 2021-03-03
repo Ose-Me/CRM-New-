@@ -1,11 +1,11 @@
-@import '../../../styles/app';
+@import "../../../styles/app";
 
 .headerLink {
   width: 100%;
   overflow-x: hidden;
 
-  @media (min-width: map_get($grid-breakpoints, lg))
-  and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px) {
+  @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height),
+    (max-width: map_get($grid-breakpoints, md) - 1px) {
     font-size: 13px;
   }
 
@@ -30,7 +30,6 @@
     font-size: 14px;
     font-weight: $font-weight-normal;
 
-
     &:hover {
       background-color: var(--sidebar-item-hover-bg-color);
     }
@@ -53,8 +52,8 @@
     line-height: 28px;
     text-align: center;
 
-    @media (min-width: map_get($grid-breakpoints, lg))
-    and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px) {
+    @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height),
+      (max-width: map_get($grid-breakpoints, md) - 1px) {
       top: 12px;
     }
   }
@@ -67,13 +66,15 @@
     padding: 7px;
     background: var(--sidebar-badge-bg);
 
-    @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px) {
+    @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height),
+      (max-width: map_get($grid-breakpoints, md) - 1px) {
       margin-top: 16px;
     }
   }
 
   .collapse > ul > li a {
     padding-left: 50px;
+    font-size: 0.86rem;
   }
 }
 
@@ -86,7 +87,7 @@
   align-items: center;
   margin-left: auto;
   margin-right: 22px;
-  color: #5CB0FF;
+  color: #cf5cff;
 
   i {
     @include transition(transform 0.3s ease-in-out);

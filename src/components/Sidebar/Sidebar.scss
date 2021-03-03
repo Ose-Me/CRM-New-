@@ -1,4 +1,4 @@
-@import '../../styles/app';
+@import "../../styles/app";
 .sidebar {
   position: absolute;
   top: 0;
@@ -18,7 +18,8 @@
   overflow-y: auto;
   overflow-x: hidden;
   width: $sidebar-width-open;
-  transition: width $sidebar-transition-time ease-in-out, left $sidebar-transition-time ease-in-out;
+  transition: width $sidebar-transition-time ease-in-out,
+    left $sidebar-transition-time ease-in-out;
 
   @include sidebar-scrollbar();
 }
@@ -61,7 +62,6 @@
   }
 }
 
-
 .sidebarClose .logo {
   width: $sidebar-width-closed;
   .secondary-word {
@@ -86,10 +86,10 @@
 
 .navTitle {
   margin: 35px 0 24px 22px;
-  font-size: $font-size-mini;
+  font-size: $font-size-base;
   font-weight: $font-weight-bold;
   transition: opacity $sidebar-transition-time ease-in-out;
-  color: rgba(#5287B9, 0.6);
+  color: rgba(155, 82, 185, 0.9);
 
   &.first {
     margin-top: 46px;
@@ -100,11 +100,9 @@
   }
 }
 
-
 .sidebarClose .navTitle {
   opacity: 0;
 }
-
 
 .sidebarStatic .navTitle {
   opacity: 1;

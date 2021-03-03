@@ -6,10 +6,10 @@
         @mouseleave="sidebarMouseLeave"
     >
       <header class="logo">
-        <router-link to="/app/dashboard"><span class="primary-word">Sing</span> <span class="secondary-word"> App</span></router-link>
+        <router-link to="/app/dashboard"><span class="primary-word">LOGO</span> <span class="secondary-word"></span></router-link>
       </header>
       <h5 class="navTitle first">
-        APP
+        CRM
       </h5>
       <ul class="nav">
         <NavLink
@@ -20,9 +20,21 @@
             index="dashboard"
             isHeader
         />
+         <NavLink
+            :activeItem="activeItem"
+            header="Projects"
+            link="/app/components"
+            iconName="flaticon-network"
+            index="components"
+            :childrenLinks="[
+              { header: 'Project Management', link: '/app/components/charts' },
+              { header: 'Tasks', link: '/app/components/icons' },
+              { header: 'Reports', link: '/app/components/maps' },
+            ]"
+        />
         <NavLink
             :activeItem="activeItem"
-            header="Typography"
+            header="Tickets"
             link="/app/typography"
             iconName="flaticon-list"
             index="typography"
@@ -30,7 +42,7 @@
         />
         <NavLink
             :activeItem="activeItem"
-            header="Tables Basic"
+            header="Institutions"
             link="/app/tables"
             iconName="flaticon-equal-1"
             index="tables"
@@ -38,24 +50,13 @@
         />
         <NavLink
             :activeItem="activeItem"
-            header="Notifications"
+            header="User Management"
             link="/app/notifications"
-            iconName="flaticon-bell"
+            iconName="flaticon-user1"
             index="notifications"
             isHeader
         />
-        <NavLink
-            :activeItem="activeItem"
-            header="Components"
-            link="/app/components"
-            iconName="flaticon-network"
-            index="components"
-            :childrenLinks="[
-              { header: 'Charts', link: '/app/components/charts' },
-              { header: 'Icons', link: '/app/components/icons' },
-              { header: 'Maps', link: '/app/components/maps' },
-            ]"
-        />
+       
       </ul>
       <h5 class="navTitle">
         LABELS
