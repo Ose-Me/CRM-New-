@@ -1,8 +1,7 @@
 <template>
   <div class="dashboard-page">
     <h1 class="page-title">Dashboard</h1>
-   
-    <!-- <b-row>
+    <b-row>
       <b-col md="6" xl="3" sm="6" xs="12">
         <div class="pb-xlg h-100">
           <Widget class="h-100 mb-0" title="Visits Today" close>
@@ -24,9 +23,83 @@
           </Widget>
         </div>
       </b-col>
-     
-    </b-row> -->
-
+      <b-col md="6" xl="3" sm="6" xs="12">
+        <div class="pb-xlg h-100">
+          <Widget class="h-100 mb-0" title="Revenue Breakdown" close>
+            <highcharts :options="donut"></highcharts>
+          </Widget>
+        </div>
+      </b-col>
+      <b-col md="6" xl="3" sm="6" xs="12">
+        <div class="pb-xlg h-100">
+          <Widget class="h-100 mb-0" title="App Perfomance" close>
+            <p class="text-muted d-flex flex-wrap">
+              <small class="mr-lg d-flex align-items-center">
+                <span class="circle bg-danger text-danger mr-xs" style="font-size: 4px;">
+                  .
+                </span>
+                  This Period
+              </small>
+              <small class="mr-lg d-flex align-items-center">
+                <span class="circle bg-primary text-primary mr-xs" style="font-size: 4px;">
+                  .
+                </span>
+                Last Period
+              </small>
+            </p>
+            <h6>SDK</h6>
+            <b-progress class="mb-xs" style="height: 5px"
+              variant="danger" :value="60" :max="100" />
+            <b-progress class="mb" style="height: 5px"
+              variant="primary" :value="35" :max="100" />
+            <h6>Integration</h6>
+            <b-progress class="mb-xs" style="height: 5px"
+              variant="danger" :value="40" :max="100" />
+            <b-progress style="height: 5px"
+              variant="primary" :value="55" :max="100" />
+          </Widget>
+        </div>
+      </b-col>
+      <b-col md="6" xl="3" sm="6" xs="12">
+        <div class="pb-xlg h-100">
+          <Widget class="h-100 mb-0" title="Server Overview" close>
+            <div class="d-flex align-items-center mb-sm">
+              <p class="width-150"><small>60% / 37°С / 3.3 Ghz</small></p>
+              <div style="width: calc(100% - 150px)">
+                <trend
+                  :data="getRandomData()"
+                  :gradient="[appConfig.colors.danger]"
+                  :height="40"
+                  stroke-width="4"
+                  smooth />
+              </div>
+            </div>
+            <div class="d-flex align-items-center mb-sm">
+              <p class="width-150"><small>54% / 31°С / 3.3 Ghz</small></p>
+              <div style="width: calc(100% - 150px)">
+                <trend
+                  :data="getRandomData()"
+                  :gradient="[appConfig.colors.info]"
+                  :height="40"
+                  stroke-width="4"
+                  smooth />
+              </div>
+            </div>
+            <div class="d-flex align-items-center">
+              <p class="width-150"><small>57% / 21°С / 3.3 Ghz</small></p>
+              <div style="width: calc(100% - 150px)">
+                <trend
+                  :data="getRandomData()"
+                  :gradient="[appConfig.colors.primary]"
+                  :height="40"
+                  stroke-width="4"
+                  smooth />
+              </div>
+            </div>
+          </Widget>
+        </div>
+      </b-col>
+    </b-row>
     <b-row>
       <b-col xs="12" lg="6" xl="4" v-for="stat in mock.bigStat" :key="stat.id">
         <BigStat
@@ -38,7 +111,6 @@
         />
       </b-col>
     </b-row>
-    
     <b-row>
         <b-col xs="12">
           <Widget

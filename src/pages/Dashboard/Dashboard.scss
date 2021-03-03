@@ -1,8 +1,9 @@
-@import '../../styles/app';
+@import "../../styles/app";
 
 .dashboard-page {
   .requests-table {
-    td, th {
+    td,
+    th {
       font-weight: $font-weight-normal;
     }
 

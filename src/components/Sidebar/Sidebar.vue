@@ -58,7 +58,8 @@
         />
        
       </ul>
-      <h5 class="navTitle">
+     
+      <!-- <h5 class="navTitle">
         LABELS
       </h5>
       <ul class="sidebarLabels">
@@ -80,7 +81,8 @@
             <span class="labelName">Forms</span>
           </a>
         </li>
-      </ul>
+      </ul> -->
+
       <h5 class="navTitle">
         PROJECTS
       </h5>
