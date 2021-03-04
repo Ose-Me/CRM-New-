@@ -1,0 +1,65 @@
+.users {
+  .btn-primary {
+    background-color: #ab47bc;
+    color: #fff;
+    border: 1px solid #ab47bc;
+    // padding: 0.2rem 1.5rem;
+    height: 35px;
+    border-radius: 5px;
+
+    &:hover {
+      cursor: pointer;
+      color: #ab47bc;
+      background-color: transparent;
+      border-color: #ab47bc;
+    }
+  }
+
+  .btn-secondary:not(:disabled):not(.disabled):active,
+  .btn-secondary:hover,
+  .btn-secondary:focus,
+  .btn-group > .btn:focus,
+  .show > .btn-secondary.dropdown-toggle,
+  .show > .btn-secondary.dropdown-toggle:focus {
+    color: #fff;
+    background-color: #fff;
+    border: none;
+    box-shadow: none;
+  }
+
+  .dropdown-toggle {
+    background: transparent;
+    border: none;
+  }
+
+  .dropdown-toggle::after {
+    display: none;
+  }
+
+  .card-body {
+    padding-top: 0;
+  }
+
+  .table-sm th,
+  .table-sm td {
+    padding: 0.7rem;
+  }
+
+  .table-sm th {
+    padding: 0.8rem;
+  }
+
+  .table th,
+  .table td {
+    vertical-align: inherit;
+  }
+
+  .table th {
+    border-top: none;
+  }
+
+  // .card {
+  //   box-shadow: 0px 0px 10px 2px rgba(165, 162, 165, 0.2);
+  //   border: transparent;
+  // }
+}

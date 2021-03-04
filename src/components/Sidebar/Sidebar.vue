@@ -23,37 +23,37 @@
          <NavLink
             :activeItem="activeItem"
             header="Projects"
-            link="/app/components"
+            link="/app/projects"
             iconName="flaticon-network"
-            index="components"
+            index="projects"
             :childrenLinks="[
-              { header: 'Project Management', link: '/app/components/charts' },
-              { header: 'Tasks', link: '/app/components/icons' },
-              { header: 'Reports', link: '/app/components/maps' },
+              { header: 'Project Management', link: '/app/projects/projects' },
+              { header: 'Tasks', link: '/app/projects/tasks' },
+              { header: 'Reports', link: '/app/projects/reports' },
             ]"
         />
         <NavLink
             :activeItem="activeItem"
             header="Tickets"
-            link="/app/typography"
+            link="/app/tickets"
             iconName="flaticon-list"
-            index="typography"
+            index="tickets"
             isHeader
         />
         <NavLink
             :activeItem="activeItem"
             header="Institutions"
-            link="/app/tables"
+            link="/app/institutions"
             iconName="flaticon-equal-1"
-            index="tables"
+            index="institutions"
             isHeader
         />
         <NavLink
             :activeItem="activeItem"
             header="User Management"
-            link="/app/notifications"
+            link="/app/user-management"
             iconName="flaticon-user1"
-            index="notifications"
+            index="user-management"
             isHeader
         />
        
