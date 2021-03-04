@@ -4,6 +4,7 @@
   top: 0;
   left: 0;
   width: $sidebar-width-open;
+  min-height: $sidebar-min-height;
   background-color: var(--sidebar-bg-color);
   color: var(--sidebar-color);
   transition: $transition-base;

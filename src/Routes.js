@@ -7,6 +7,11 @@ import ErrorPage from "@/pages/Error/Error";
 import Projects from "@/pages/Projects/ProjectManagement/Projects";
 import Tasks from "@/pages/Projects/Tasks/Tasks";
 // import Reports from "@/pages/Projects/Reports/Reports";
+import UserManagement from "@/pages/UserManagement/UserManagement";
+import Users from "@/pages/UserManagement/Users/Users";
+import Roles from "@/pages/UserManagement/Roles/Roles";
+import CreateUser from "@/pages/UserManagement/Users/CreateUser/CreateUser";
+import CreateRole from "@/pages/UserManagement/Roles/CreateRole/CreateRole";
 // Core
 import TypographyPage from "@/pages/Typography/Typography";
 
@@ -65,6 +70,31 @@ export default new Router({
         //   name: "Reports",
         //   component: Reports,
         // },
+        {
+          path: "usermanagement",
+          name: "UserManagement",
+          component: UserManagement,
+        },
+        {
+          path: "usermanagement/users",
+          name: "Users",
+          component: Users,
+        },
+        {
+          path: "usermanagement/roles",
+          name: "Roles",
+          component: Roles,
+        },
+        {
+          path: "usermanagement/users/createuser",
+          name: "CreateUser",
+          component: CreateUser,
+        },
+        {
+          path: "usermanagement/roles/createrole",
+          name: "CreateRole",
+          component: CreateRole,
+        },
         {
           path: "typography",
           name: "TypographyPage",

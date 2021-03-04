@@ -51,7 +51,7 @@
         <NavLink
             :activeItem="activeItem"
             header="User Management"
-            link="/app/user-management"
+            link="/app/usermanagement"
             iconName="flaticon-user1"
             index="user-management"
             isHeader

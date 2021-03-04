@@ -2,10 +2,9 @@
   <div class=" users">
     <div class="d-flex justify-content-between mb-3">
       <div class="d-flex align-items-center">
-      <router-link tag="a" to="/usermanagement"> <img src="/assets/icon/arrow.svg" alt=""></router-link> 
-      <h3 class="heading m-0 ml-2">Manage Users</h3>
+      <h1 class="page-title m-0 ml-2">Manage Users</h1>
       </div>
-      <router-link tag="a" :to="'/usermanagement/createuser'">
+      <router-link tag="a" :to="'/app/usermanagement/users/createuser'">
         <div class="full-btn d-flex justify-content-center align-items-center">
           <span> Create</span>
         </div>
@@ -61,7 +60,7 @@
     </b-row>
 
     <!-- Main table element -->
-    <b-card>
+    <div class="card p-0">
       <b-table
         :items="items"
         :fields="fields"
@@ -73,6 +72,7 @@
         :sort-desc.sync="sortDesc"
         :sort-direction="sortDirection"
         stacked="md"
+        striped
         show-empty
         small
         @filtered="onFiltered"
@@ -80,6 +80,17 @@
         <template #cell(name)="row">
           {{ row.value.first }} {{ row.value.last }}
         </template>
+
+        <!-- <template #cell(isActive)="row">
+           <b-badge
+                        :variant="row.value.isActive === 'true'
+                          ? 'success'
+                          : row.value.isActive === 'false' ? 'danger' : 'info'"
+                        pill
+                      >
+                        {{row.value.isActive}}
+                      </b-badge>
+        </template> -->
 
         <template #cell(actions)="row">
           <b-dropdown id="dropdown-right" right text="" class="m-2">
@@ -89,7 +100,9 @@
             <b-dropdown-item @click="info(row.item, row.index, $event.target)"
               >view</b-dropdown-item
             >
-            <!-- <b-dropdown-divider></b-dropdown-divider> -->
+            <b-dropdown-divider></b-dropdown-divider>
+            <b-dropdown-item>Edit</b-dropdown-item>
+            <b-dropdown-divider></b-dropdown-divider>
             <b-dropdown-item>Delete</b-dropdown-item>
           </b-dropdown>
         </template>
@@ -104,7 +117,8 @@
           </b-card>
         </template>
       </b-table>
-    </b-card>
+    </div>
+
     <div class="row d-flex justify-content-center py-3">
       <b-col sm="7" md="4" class="my-1">
         <b-pagination

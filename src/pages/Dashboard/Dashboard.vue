@@ -1,9 +1,39 @@
 <template>
   <div class="dashboard-page">
     <h1 class="page-title">Dashboard</h1>
-   
-    <!-- <b-row>
-      <b-col md="6" xl="3" sm="6" xs="12">
+    
+    <div class="cards mb-3">
+        <!-- projects card -->
+        <router-link
+          tag="a"
+          :to="`${item.link}`"
+          v-for="item in items.items"
+          :key="item.title"
+        >
+          <div class="card py-3 px-4">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <p class="m-0 value">{{item.value}}</p>
+                <p class="m-0 title">{{item.title}}</p>
+              </div>
+              <div
+                class="icon-container d-flex justify-content-center align-items-center"
+              >
+                <img :src="`/assets/icon/${item.src}.svg`" alt="projects" />
+              </div>
+            </div>
+            <!-- timestamp -->
+            <div class="mt-2 d-flex align-items-center timestamp">
+              <img src="/assets/icon/clock.svg" alt="time" />
+              <span class="ml-2">{{item.timestamp}}</span>
+            </div>
+          </div>
+        </router-link>
+
+        
+      </div>
+    <b-row>
+      <b-col md="6" xl="4" sm="6" xs="12">
         <div class="pb-xlg h-100">
           <Widget class="h-100 mb-0" title="Visits Today" close>
             <div class="d-flex justify-content-between align-items-center mb-lg">
@@ -25,20 +55,8 @@
         </div>
       </b-col>
      
-    </b-row> -->
-
-    <b-row>
-      <b-col xs="12" lg="6" xl="4" v-for="stat in mock.bigStat" :key="stat.id">
-        <BigStat
-          :product="stat.product"
-          :color="stat.color"
-          :total="stat.total"
-          :registrations="stat.registrations"
-          :bounce="stat.bounce"
-        />
-      </b-col>
     </b-row>
-    
+
     <b-row>
         <b-col xs="12">
           <Widget
@@ -94,6 +112,7 @@
 import Widget from '@/components/Widget/Widget';
 import BigStat from './components/BigStat/BigStat';
 import mock from './mock';
+import items from './item.js'
 
 import { Chart } from 'highcharts-vue';
 
@@ -104,7 +123,8 @@ export default {
   },
   data() {
     return {
-      mock
+      mock,
+      items
     };
   },
   methods: {

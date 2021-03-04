@@ -1,0 +1,17 @@
+.users {
+  .btn-primary {
+    background-color: #ab47bc;
+    color: #fff;
+    border: 1px solid #ab47bc;
+    padding: 0.2rem 1.5rem;
+    height: 35px;
+    border-radius: 5px;
+
+    &:hover {
+      cursor: pointer;
+      color: #ab47bc;
+      background-color: transparent;
+      border-color: #ab47bc;
+    }
+  }
+}

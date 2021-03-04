@@ -1,13 +1,16 @@
 <template>
-  <div class=" users">
-    <div class="d-flex justify-content-between">
+  <div class="users">
+    <div class="d-flex justify-content-between mb-3">
       <div class="d-flex align-items-center">
-     <h1 class="page-title">Tasks</h1>
+       <h1 class="page-title m-0 ml-2">Manage Roles</h1>
       </div>
-      <router-link tag="a" :to="'/usermanagement/createuser'">
-        <div class="full-btn d-flex justify-content-center align-items-center">
-          <b-button variant="default">Add Task</b-button>
-        </div>
+      <router-link
+          tag="a"
+          :to="'/app/usermanagement/roles/createrole'"
+        >
+      <div class="full-btn d-flex justify-content-center align-items-center">
+        <span> Create</span>
+      </div>
       </router-link>
     </div>
 
@@ -61,49 +64,57 @@
 
     <!-- Main table element -->
     <b-card>
-      <b-table
-        :items="items"
-        :fields="fields"
-        :current-page="currentPage"
-        :per-page="perPage"
-        :filter="filter"
-        :filter-included-fields="filterOn"
-        :sort-by.sync="sortBy"
-        :sort-desc.sync="sortDesc"
-        :sort-direction="sortDirection"
-        stacked="md"
-        show-empty
-        small
-        @filtered="onFiltered"
-      >
-        <template #cell(name)="row">
-          {{ row.value.first }} {{ row.value.last }}
-        </template>
+    <b-table
+      :items="items"
+      :fields="fields"
+      :current-page="currentPage"
+      :per-page="perPage"
+      :filter="filter"
+      :filter-included-fields="filterOn"
+      :sort-by.sync="sortBy"
+      :sort-desc.sync="sortDesc"
+      :sort-direction="sortDirection"
+      stacked="md"
+      show-empty
+      small
+      @filtered="onFiltered"
+    >
+      <!-- <template #cell(name)="row">
+        {{ row.value.first }} {{ row.value.last }}
+      </template> -->
 
-        <template #cell(actions)="row">
-          <b-dropdown id="dropdown-right" right text="" class="m-2">
-            <template #button-content>
-              <img src="/assets/icon/options.svg" alt="" />
-            </template>
-            <b-dropdown-item @click="info(row.item, row.index, $event.target)"
-              >view</b-dropdown-item
-            >
-            <!-- <b-dropdown-divider></b-dropdown-divider> -->
-            <b-dropdown-item>Delete</b-dropdown-item>
-          </b-dropdown>
-        </template>
+<template #table-colgroup="scope">
+    <col
+      v-for="field in scope.fields"
+      :key="field.key"
+      :style="{ width: field.key === 'description' ? '700px' : '300px' }"
+    >
+  </template>
 
-        <template #row-details="row">
-          <b-card>
-            <ul>
-              <li v-for="(value, key) in row.item" :key="key">
-                {{ key }}: {{ value }}
-              </li>
-            </ul>
-          </b-card>
-        </template>
-      </b-table>
-    </b-card>
+       <template #cell(actions)="row">
+        <b-dropdown id="dropdown-right" right text="" class="m-md-2">
+          <template #button-content>
+            <img src="/assets/icon/options.svg" alt="">
+          </template>
+          <b-dropdown-item @click="info(row.item, row.index, $event.target)"
+            >view</b-dropdown-item
+          >
+          <b-dropdown-divider></b-dropdown-divider>
+          <b-dropdown-item>Delete</b-dropdown-item>
+        </b-dropdown>
+      </template>
+
+      <template #row-details="row">
+        <b-card>
+          <ul>
+            <li v-for="(value, key) in row.item" :key="key">
+              {{ key }}: {{ value }}
+            </li>
+          </ul>
+        </b-card>
+      </template>
+    </b-table>
+</b-card>
     <div class="row d-flex justify-content-center py-3">
       <b-col sm="7" md="4" class="my-1">
         <b-pagination
@@ -131,8 +142,7 @@
       </p>
       <p>Email: {{ infoModal.content.email }}</p>
       <p>Phone Number: {{ infoModal.content.number }}</p>
-      <p>
-        Status:
+      <p>Status:
         <span
           class=""
           v-bind:class="{
@@ -150,102 +160,53 @@
 
 <script>
 export default {
-  name: "Users",
+  name: "Roles",
   components: {},
   data() {
     return {
       items: [
         {
-          isActive: true,
-          email: "test@yahoo.com",
-          number: "09067283988",
-          name: { first: "Dickerson", last: "Macdonald" },
+          role: "Role name",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, commodo consequat",
+         dateCreated:"22nd febuary 2021",
+         createdBy:"Pearl Imaobong"
         },
         {
-          isActive: false,
-          email: "test@yahoo.com",
-          number: "09067283988",
-          name: { first: "Larsen", last: "Shaw" },
+          role: "Role name",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, commodo consequat",
+         dateCreated:"22nd febuary 2021",
+         createdBy:"Pearl Imaobong"
         },
         {
-          isActive: false,
-          email: "test@yahoo.com",
-          number: "09067283988",
-          name: { first: "Mini", last: "Navarro" },
+          role: "Role name",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, commodo consequat",
+         dateCreated:"22nd febuary 2021",
+         createdBy:"Pearl Imaobong"
         },
         {
-          isActive: false,
-          email: "test@yahoo.com",
-          number: "09067283988",
-          name: { first: "Geneva", last: "Wilson" },
+          role: "Role name",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, commodo consequat",
+         dateCreated:"22nd febuary 2021",
+         createdBy:"Pearl Imaobong"
         },
         {
-          isActive: true,
-          email: "test@yahoo.com",
-          number: "09067283988",
-          name: { first: "Jami", last: "Carney" },
-        },
-        {
-          isActive: false,
-          email: "test@yahoo.com",
-          number: "09067283988",
-          name: { first: "Essie", last: "Dunlap" },
-        },
-        {
-          isActive: true,
-          email: "test@yahoo.com",
-          number: "09067283988",
-          name: { first: "Thor", last: "Macdonald" },
-        },
-        {
-          isActive: true,
-          email: "test@yahoo.com",
-          number: "09067283988",
-          name: { first: "Larsen", last: "Shaw" },
-        },
-        {
-          isActive: false,
-          email: "test@yahoo.com",
-          number: "09067283988",
-          name: { first: "Mitzi", last: "Navarro" },
-        },
-        {
-          isActive: false,
-          email: "test@yahoo.com",
-          number: "09067283988",
-          name: { first: "Genevieve", last: "Wilson" },
-        },
-        {
-          isActive: true,
-          email: "test@yahoo.com",
-          number: "09067283988",
-          name: { first: "John", last: "Carney" },
-        },
-        {
-          isActive: false,
-          email: "test@yahoo.com",
-          number: "09067283988",
-          name: { first: "Dick", last: "Dunlap" },
+        
+          role: "Role name",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, commodo consequat",
+         dateCreated:"22nd febuary 2021",
+         createdBy:"Pearl Imaobong"
         },
       ],
       fields: [
         {
-          key: "name",
-          label: "Full name",
+          key: "role",
+          label: "Role",
           sortable: true,
           sortDirection: "desc",
         },
-        { key: "email", label: "Email" },
-        { key: "number", label: "Phone Number" },
-        {
-          key: "isActive",
-          label: "Is Active",
-          formatter: (value) => {
-            return value ? "Yes" : "No";
-          },
-          sortByFormatted: true,
-          filterByFormatted: true,
-        },
+        { key: "description", label: "Description" },
+        { key: "dateCreated", label: "Date Created" },
+        { key: "createdBy", label: "Created By" },
         { key: "actions", label: "Actions" },
       ],
       totalRows: 1,
@@ -261,7 +222,6 @@ export default {
         id: "info-modal",
         title: "",
         content: {
-          isActive: false,
           email: "",
           number: "",
           name: {
@@ -306,4 +266,4 @@ export default {
   },
 };
 </script>
-<style src="./Tasks.scss" lang="scss" />
+<style src="./Roles.scss" lang="scss" scoped />
