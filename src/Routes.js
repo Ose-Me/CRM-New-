@@ -4,7 +4,7 @@ import Router from "vue-router";
 import Layout from "@/components/Layout/Layout";
 import Login from "@/pages/Login/Login";
 import ErrorPage from "@/pages/Error/Error";
-import Projects from "@/pages/Projects/ProjectManagement/Projects";
+import Projects from "@/pages/Projects/ProjectManagement/ProjectManagement";
 import Tasks from "@/pages/Projects/Tasks/Tasks";
 // import Reports from "@/pages/Projects/Reports/Reports";
 import UserManagement from "@/pages/UserManagement/UserManagement";
@@ -56,7 +56,7 @@ export default new Router({
           component: AnalyticsPage,
         },
         {
-          path: "projects/project-management",
+          path: "projects",
           name: "Projects",
           component: Projects,
         },

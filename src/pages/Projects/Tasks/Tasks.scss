@@ -1,67 +1,30 @@
-// @import "~@fullcalendar/core/main.css";
-// @import "~@fullcalendar/daygrid/main.css";
-.users {
-  .btn-primary {
-    background-color: #ab47bc;
+.tasks {
+  .card-header {
+    background-color: transparent;
+  }
+
+  .nav-pills .nav-link {
+    border-radius: 0.5rem;
+    color: inherit;
+    font-weight: 500;
+  }
+
+  .nav-pills .nav-link.active,
+  .nav-pills .show > .nav-link {
     color: #fff;
-    border: 1px solid #ab47bc;
-    // padding: 0.2rem 1.5rem;
-    height: 35px;
-    border-radius: 5px;
-
-    &:hover {
-      cursor: pointer;
-      color: #ab47bc;
-      background-color: transparent;
-      border-color: #ab47bc;
-    }
+    background-color: #9964e3;
   }
 
-  .btn-secondary:not(:disabled):not(.disabled):active,
-  .btn-secondary:hover,
-  .btn-secondary:focus,
-  .btn-group > .btn:focus,
-  .show > .btn-secondary.dropdown-toggle,
-  .show > .btn-secondary.dropdown-toggle:focus {
-    color: #fff;
-    background-color: #fff;
-    border: none;
-    box-shadow: none;
+  .tab-content {
+    background-color: transparent;
   }
 
-  .dropdown-toggle {
-    background: transparent;
-    border: none;
+  .fc-h-event .fc-event-main {
+    background: #9964e3;
+    border-color: #9964e3;
   }
 
-  .dropdown-toggle::after {
-    display: none;
+  .card-header {
+    padding: 0.75rem 0;
   }
-
-  .card-body {
-    padding-top: 0;
-  }
-
-  .table-sm th,
-  .table-sm td {
-    padding: 0.7rem;
-  }
-
-  .table-sm th {
-    padding: 0.8rem;
-  }
-
-  .table th,
-  .table td {
-    vertical-align: inherit;
-  }
-
-  .table th {
-    border-top: none;
-  }
-
-  // .card {
-  //   box-shadow: 0px 0px 10px 2px rgba(165, 162, 165, 0.2);
-  //   border: transparent;
-  // }
 }

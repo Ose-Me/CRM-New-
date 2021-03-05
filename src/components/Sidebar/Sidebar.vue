@@ -27,7 +27,7 @@
             iconName="flaticon-network"
             index="projects"
             :childrenLinks="[
-              { header: 'Project Management', link: '/app/projects/projects' },
+              { header: 'Project Management', link: '/app/projects' },
               { header: 'Tasks', link: '/app/projects/tasks' },
               { header: 'Reports', link: '/app/projects/reports' },
             ]"
