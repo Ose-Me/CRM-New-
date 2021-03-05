@@ -85,7 +85,7 @@ import a3 from '../../assets/people/a3.jpg';
 import a4 from '../../assets/people/a4.jpg';
 import a5 from '../../assets/people/a5.jpg';
 import a6 from '../../assets/people/a6.jpg';
-import { MessageStates } from '../../store/layout';
+import { MessageStates } from '../../store/modules/layout';
 
 export default {
   name: 'Chat',
