@@ -8,9 +8,7 @@
           tag="a"
           :to="'/app/usermanagement/roles/createrole'"
         >
-      <div class="full-btn d-flex justify-content-center align-items-center">
-        <span> Create</span>
-      </div>
+      <b-button variant="info">Create</b-button>
       </router-link>
     </div>
 

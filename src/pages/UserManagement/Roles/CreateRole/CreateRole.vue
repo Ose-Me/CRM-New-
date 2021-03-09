@@ -5,7 +5,7 @@
        <h1 class="page-title m-0 ml-2">Create Role</h1>
       </div>
     </div>
-    <b-card class="shadow-card">
+    <b-card class="shadow-card pt-3">
       <b-form @submit="onSubmit" @reset="onReset" v-if="show">
         <b-form-group id="input-group-1" label="Role name" label-for="input-1">
           <b-form-input
@@ -158,10 +158,10 @@
         </div>
 
         <div class="mt-5 mb-2 d-flex justify-content-end">
-          <b-button class="mr-2" type="submit" variant="outline-danger"
+          <b-button class="mr-2" type="submit" variant="outline-info"
             >Cancel</b-button
           >
-          <b-button type="reset" variant="outline-success">Submit</b-button>
+          <b-button type="reset" variant="info">Submit</b-button>
         </div>
       </b-form>
     </b-card>

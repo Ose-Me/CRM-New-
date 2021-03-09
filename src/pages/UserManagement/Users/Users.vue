@@ -5,9 +5,7 @@
       <h1 class="page-title m-0 ml-2">Manage Users</h1>
       </div>
       <router-link tag="a" :to="'/app/usermanagement/users/createuser'">
-        <div class="full-btn d-flex justify-content-center align-items-center">
-          <span> Create</span>
-        </div>
+         <b-button variant="info">Create</b-button>
       </router-link>
     </div>
 

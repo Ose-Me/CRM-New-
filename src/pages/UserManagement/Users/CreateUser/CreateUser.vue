@@ -3,7 +3,7 @@
     <div class="mb-3">   
       <h1 class="page-title m-0 ml-2">Create User</h1>    
     </div>
-    <b-card class="shadow-card py-4 mb-3">
+    <b-card class="shadow-card pt-4">
       <b-form @submit="onSubmit" @reset="onReset" v-if="show">
         <div class="row">
           <div class="col-md-6">
@@ -130,10 +130,10 @@
         
 
         <div class="my-3 d-flex justify-content-end">
-          <b-button class="mr-2" type="submit" variant="outline-danger"
+          <b-button class="mr-2" type="submit" variant="outline-info"
             >Cancel</b-button
           >
-          <b-button type="reset" variant="outline-success">Submit</b-button>
+          <b-button type="reset" variant="info">Submit</b-button>
         </div>
       </b-form>
     </b-card>
